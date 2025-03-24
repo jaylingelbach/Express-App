@@ -8,6 +8,7 @@ import errorHandler from './middleware/error.js';
 import goals from './routes/goalRoutes.js';
 import logger from './middleware/logger.js';
 import notFound from './middleware/notFound.js';
+import users from './routes/userRoutes.js'; 
 
 
 dotenv.config();
@@ -27,6 +28,7 @@ app.use(express.urlencoded({extended: false}));
 
 
 app.use("/api/goals", goals);
+app.use('/api/users', users);
 
 app.use(notFound);
 app.use(errorHandler); 
